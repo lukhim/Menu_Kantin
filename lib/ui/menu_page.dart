@@ -57,6 +57,12 @@ class _MenuPageState extends State<MenuPage> {
                       imagePath: 'lib/assets/images/nasi.png',
                       category: 'Karbo',
                     ),
+                  ],
+                ),
+                SizedBox(height: 8.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
                     MenuCard(
                       item: 'Ayam Goreng',
                       selected: selectedItems.containsValue('Ayam Goreng'),
@@ -64,12 +70,6 @@ class _MenuPageState extends State<MenuPage> {
                       imagePath: 'lib/assets/images/ayam_goreng.png',
                       category: 'Lawuk',
                     ),
-                  ],
-                ),
-                SizedBox(height: 8.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
                     MenuCard(
                       item: 'Ayam Kebuli',
                       selected: selectedItems.containsValue('Ayam Kebuli'),
@@ -77,11 +77,25 @@ class _MenuPageState extends State<MenuPage> {
                       imagePath: 'lib/assets/images/nasi_kebuli.png',
                       category: 'Lawuk',
                     ),
+                  ],
+                ),
+                SizedBox(height: 8.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+
                     MenuCard(
                       item: 'Jus Jeruk',
                       selected: selectedItems.containsValue('Jus Jeruk'),
                       onPressed: _toggleItem,
                       imagePath: 'lib/assets/images/jus_jeruk.png',
+                      category: 'Minum',
+                    ),
+                    MenuCard(
+                      item: 'Es Teh',
+                      selected: selectedItems.containsValue('Es Teh'),
+                      onPressed: _toggleItem,
+                      imagePath: 'lib/assets/images/es_teh.png',
                       category: 'Minum',
                     ),
                   ],
@@ -90,13 +104,7 @@ class _MenuPageState extends State<MenuPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    MenuCard(
-                      item: 'Es Teh',
-                      selected: selectedItems.containsValue('Es Teh'),
-                      onPressed: _toggleItem,
-                      imagePath: 'lib/assets/images/es_teh.png',
-                      category: 'Minum',
-                    ),
+
                     MenuCard(
                       item: 'Teh Anget',
                       selected: selectedItems.containsValue('Teh Anget'),
@@ -176,6 +184,11 @@ class CheckoutPage extends StatelessWidget {
 
   const CheckoutPage({required this.selectedItems});
 
+  String getCurrentTime() {
+    final currentTime = DateTime.now();
+    return '${currentTime.year.toString().padLeft(4, '0')}:${currentTime.month.toString().padLeft(2, '0')}:${currentTime.day.toString().padLeft(2, '0')} Jam ${currentTime.hour.toString().padLeft(2, '0')}:${currentTime.minute.toString().padLeft(2, '0')}';
+  }
+
   String generateOrderNumber() {
     // Generate a random order number starting with "P" followed by 5 random digits
     final random = Random();
@@ -223,6 +236,14 @@ class CheckoutPage extends StatelessWidget {
                   subtitle: Text('menu: $item'),
                 );
               },
+            ),
+          ),
+          SizedBox(height: 16.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              'Dipesan saat: ${getCurrentTime()}',
+              style: TextStyle(fontSize: 16.0),
             ),
           ),
           SizedBox(height: 16.0),
