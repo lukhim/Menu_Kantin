@@ -324,7 +324,7 @@ class CheckoutPage extends StatelessWidget {
                   minimumSize: MaterialStateProperty.all(const Size(200.0, 50.0)),
                 ),
                 child: const Text(
-                  'Pesan',
+                  'Lanjutkan',
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
