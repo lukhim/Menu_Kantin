@@ -71,6 +71,10 @@ flutter:
     - "lib/assets/images/teh_anget.png"
     - "lib/assets/images/jus_jeruk.png"
     - "lib/assets/images/nasi_kebuli.png"
+    - 'lib/assets/images/nasi_kebuli.png'
+    - 'lib/assets/images/rendang.jpg'
+    - 'lib/assets/images/telur.jpg'
+    - 'lib/assets/images/soto.jpg'
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -99,6 +99,44 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ],
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    MenuCard(
+                      item: 'Burger',
+                      selected: selectedItems.containsValue('Burger'),
+                      onPressed: _toggleItem,
+                      imagePath: 'lib/assets/images/burger.jpg',
+                      category: 'Lawuk',
+                    ),
+                    MenuCard(
+                      item: 'Rendang',
+                      selected: selectedItems.containsValue('Rendang'),
+                      onPressed: _toggleItem,
+                      imagePath: 'lib/assets/images/rendang.jpg',
+                      category: 'Lawuk',
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    MenuCard(
+                      item: 'Soto',
+                      selected: selectedItems.containsValue('Soto'),
+                      onPressed: _toggleItem,
+                      imagePath: 'lib/assets/images/soto.jpg',
+                      category: 'Lawuk',
+                    ),
+                    MenuCard(
+                      item: 'Telur',
+                      selected: selectedItems.containsValue('Telur'),
+                      onPressed: _toggleItem,
+                      imagePath: 'lib/assets/images/telur.jpg',
+                      category: 'Lawuk',
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 8.0),
                 const Padding(
                   padding: EdgeInsets.only(left: 1.0, bottom: 5.0, top: 16.0,),
