@@ -182,19 +182,19 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ],
                 ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CheckoutPage(selectedItems: selectedItems),
+                      ),
+                    );
+                  },
+                  child: const Text('Pesan'),
+                ),
               ],
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => CheckoutPage(selectedItems: selectedItems),
-                ),
-              );
-            },
-            child: const Text('Pesan'),
           ),
           const SizedBox(height: 20.0),
         ],
@@ -381,6 +381,17 @@ class NumberOrderPage extends StatelessWidget {
               'Nomor Pesanan: $orderNumber',
               style: const TextStyle(fontSize: 30.0,)
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MenuPage(),
+                ),
+              );
+            },
+            child: const Text('Selesai'),
           ),
         ],
       ),
