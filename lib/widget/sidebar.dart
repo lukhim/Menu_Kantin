@@ -17,11 +17,11 @@ class Sidebar extends StatelessWidget {
         future: loadUserInfo(),
         builder: (BuildContext context, AsyncSnapshot<UserInfoData> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator(); // Display a loading indicator while loading user info
+            return CircularProgressIndicator();
           } else if (snapshot.hasError) {
-            return Text('Error: ${snapshot.error}'); // Display an error message if there's an error
+            return Text('Error: ${snapshot.error}');
           } else {
-            final userInfo = snapshot.data!; // Access the user information from the snapshot data
+            final userInfo = snapshot.data!;
             return ListView(
               padding: EdgeInsets.zero,
               children: [
