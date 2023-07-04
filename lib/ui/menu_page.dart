@@ -26,7 +26,7 @@ class _MenuPageState extends State<MenuPage> {
   String getCategoryForItem(String item) {
     if (item == 'Nasi') {
       return 'Karbo';
-    } else if (item == 'Ayam Goreng' || item == 'Ayam Kebuli') {
+    } else if (item == 'Ayam Goreng' || item == 'Ayam Kebuli' || item == 'Telur' || item == 'Soto' || item == 'Rendang' || item == 'Burger' ) {
       return 'Lawuk';
     } else if (item == 'Es Teh' || item == 'Teh Anget' || item == 'Jus Jeruk') {
       return 'Minum';

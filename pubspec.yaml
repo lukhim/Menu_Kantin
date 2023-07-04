@@ -71,7 +71,7 @@ flutter:
     - "lib/assets/images/teh_anget.png"
     - "lib/assets/images/jus_jeruk.png"
     - "lib/assets/images/nasi_kebuli.png"
-    - 'lib/assets/images/nasi_kebuli.png'
+    - "lib/assets/images/burger.jpg"
     - 'lib/assets/images/rendang.jpg'
     - 'lib/assets/images/telur.jpg'
     - 'lib/assets/images/soto.jpg'
