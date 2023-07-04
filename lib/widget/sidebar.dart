@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menu_kantin/ui/done.dart';
 import 'package:menu_kantin/ui/menu_page.dart';
 import 'package:menu_kantin/ui/login.dart';
 import 'package:menu_kantin/ui/account.dart';
@@ -45,6 +46,14 @@ class Sidebar extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                         context, MaterialPageRoute(builder: (context) => AccountPage()));
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.notes),
+                  title: Text("Riwayat Pesanan"),
+                  onTap: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => Done()));
                   },
                 ),
                 ListTile(

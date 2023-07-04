@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:menu_kantin/ui/done.dart';
 import 'dart:math';
 import 'package:menu_kantin/widget/sidebar.dart';
+import 'package:menu_kantin/ui/done.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -387,7 +389,7 @@ class NumberOrderPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MenuPage(),
+                  builder: (context) => Done(),
                 ),
               );
             },
