@@ -9,10 +9,10 @@ class LoginService {
       await UserInfo().setusername("lukman");
       isLogin = true;
 
-    } else if (username == 'admin' && password == 'admin') {
-      await UserInfo().setToken("admin");
+    } else if (username == 'zadmin' && password == 'admin') {
+      await UserInfo().setToken("zadmin");
       await UserInfo().setuserID("1");
-      await UserInfo().setusername("admin");
+      await UserInfo().setusername("zadmin");
       isLogin = true;
     }
     return isLogin;
