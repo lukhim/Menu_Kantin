@@ -24,7 +24,7 @@ class _LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Login Admin",
+              Text("Login",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
               SizedBox(height: 50),
               Center(

@@ -37,16 +37,26 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Sidebar(),
+      drawer: const Sidebar(),
       appBar: AppBar(
-        title: Text('Menu'),
+        title: const Text('Menu'),
       ),
       body: Column(
         children: [
           Expanded(
             child: ListView(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 1.0, bottom: 5.0,),
+                  child: Text(
+                    'Karbo',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -59,7 +69,17 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 1.0, bottom: 5.0, top: 16.0,),
+                  child: Text(
+                    'Lawuk',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -79,7 +99,17 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 1.0, bottom: 5.0, top: 16.0,),
+                  child: Text(
+                    'Minum',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -100,7 +130,7 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -126,9 +156,9 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               );
             },
-            child: Text('Confirm Order'),
+            child: const Text('Confirm Order'),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
         ],
       ),
     );
@@ -170,7 +200,7 @@ class _MenuCardState extends State<MenuCard> {
               width: 150,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(widget.item),
           ],
         ),
@@ -192,7 +222,7 @@ class CheckoutPage extends StatelessWidget {
   String generateOrderNumber() {
     // Generate a random order number starting with "P" followed by 5 random digits
     final random = Random();
-    final orderNumber = 'P' + List.generate(5, (_) => random.nextInt(10)).join();
+    final orderNumber = 'P${List.generate(5, (_) => random.nextInt(10)).join()}';
     return orderNumber;
   }
 
@@ -210,12 +240,12 @@ class CheckoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout Page'),
+        title: const Text('Checkout Page'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
               'Selected Items:',
@@ -238,26 +268,26 @@ class CheckoutPage extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               'Dipesan saat: ${getCurrentTime()}',
-              style: TextStyle(fontSize: 16.0),
+              style: const TextStyle(fontSize: 16.0),
             ),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.0),
+              padding: const EdgeInsets.symmetric(vertical: 40.0),
               child: ElevatedButton(
                 onPressed: () => _goToNumberOrderPage(context),
-                child: Text(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(const Size(200.0, 50.0)),
+                ),
+                child: const Text(
                   'Confirm Order',
                   style: TextStyle(fontSize: 18.0),
-                ),
-                style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all(Size(200.0, 50.0)),
                 ),
               ),
             ),
@@ -277,12 +307,12 @@ class NumberOrderPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Number Order Page'),
+        title: const Text('Number Order Page'),
       ),
       body: Center(
         child: Text(
           'Order Number: $orderNumber',
-          style: TextStyle(fontSize: 24.0),
+          style: const TextStyle(fontSize: 24.0),
         ),
       ),
     );
