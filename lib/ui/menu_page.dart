@@ -194,9 +194,9 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               );
             },
-            child: const Text('Confirm Order'),
+            child: const Text('Pesan'),
           ),
-          const SizedBox(height: 16.0),
+          const SizedBox(height: 20.0),
         ],
       ),
     );
@@ -269,7 +269,7 @@ class CheckoutPage extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => NumberOrderPage(orderNumber: orderNumber),
+        builder: (context) => NumberOrderPage(orderNumber: orderNumber, selectedItems: selectedItems),
       ),
     );
   }
@@ -278,7 +278,7 @@ class CheckoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Checkout Page'),
+        title: const Text('Konfirmasi'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -286,7 +286,7 @@ class CheckoutPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'Selected Items:',
+              'Pesanan:',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
@@ -324,7 +324,7 @@ class CheckoutPage extends StatelessWidget {
                   minimumSize: MaterialStateProperty.all(const Size(200.0, 50.0)),
                 ),
                 child: const Text(
-                  'Confirm Order',
+                  'Pesan',
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
@@ -338,20 +338,51 @@ class CheckoutPage extends StatelessWidget {
 
 class NumberOrderPage extends StatelessWidget {
   final String orderNumber;
+  final Map<String, String> selectedItems;
 
-  NumberOrderPage({required this.orderNumber});
+  NumberOrderPage({required this.orderNumber, required this.selectedItems });
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Number Order Page'),
+        title: const Text('Nomor Pesanan'),
       ),
-      body: Center(
-        child: Text(
-          'Order Number: $orderNumber',
-          style: const TextStyle(fontSize: 24.0),
-        ),
+      body: Column(
+
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              'Pesanan:',
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: selectedItems.length,
+              itemBuilder: (context, index) {
+                final category = selectedItems.keys.elementAt(index);
+                final item = selectedItems.values.elementAt(index);
+                return ListTile(
+                  title: Text('Pilihan $category'),
+                  subtitle: Text('menu: $item'),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            child: Text(
+              'Nomor Pesanan: $orderNumber',
+              style: const TextStyle(fontSize: 30.0,)
+            ),
+          ),
+        ],
       ),
     );
   }
