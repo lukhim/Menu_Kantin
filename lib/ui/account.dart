@@ -42,7 +42,7 @@ class _AccountPageState extends State<AccountPage> {
             const CircleAvatar(
               radius: 50,
               // Add your profile picture here
-              backgroundImage: AssetImage('assets/profile_picture.png'),
+              backgroundImage: AssetImage('lib/assets/images/profile.png'),
             ),
             const SizedBox(height: 16),
             const Text(
